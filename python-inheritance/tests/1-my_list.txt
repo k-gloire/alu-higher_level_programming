@@ -1,0 +1,50 @@
+Test cases for the MyList class
+================================
+
+Import the class
+-----------------
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Basic usage
+-----------
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Empty list
+----------
+
+    >>> empty = MyList()
+    >>> empty.print_sorted()
+    []
+
+Negative numbers
+-----------------
+
+    >>> neg = MyList()
+    >>> neg.append(-1)
+    >>> neg.append(-5)
+    >>> neg.append(0)
+    >>> neg.print_sorted()
+    [-5, -1, 0]
+
+Duplicates
+----------
+
+    >>> dup = MyList()
+    >>> dup.append(3)
+    >>> dup.append(3)
+    >>> dup.append(1)
+    >>> dup.print_sorted()
+    [1, 3, 3]
