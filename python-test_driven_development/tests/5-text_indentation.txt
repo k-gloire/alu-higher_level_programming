@@ -1,0 +1,60 @@
+Test cases for the text_indentation function
+===============================================
+
+Import the function
+--------------------
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic usage with all three marks
+-----------------------------------
+
+    >>> text_indentation("Hello. How are you? I'm fine: thanks")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I'm fine:
+    <BLANKLINE>
+    thanks
+
+Text with no marks
+---------------------
+
+    >>> text_indentation("Hello there")
+    Hello there
+
+Empty string prints nothing
+-------------------------------
+
+    >>> text_indentation("")
+
+Leading spaces before a mark are stripped
+----------------------------------------------
+
+    >>> text_indentation("  spaced.  next")
+    spaced.
+    <BLANKLINE>
+    next
+
+Text ending in a mark
+-------------------------
+
+    >>> text_indentation("Done.")
+    Done.
+    <BLANKLINE>
+
+Non-string input raises TypeError
+-------------------------------------
+
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(["Hello."])
+    Traceback (most recent call last):
+    TypeError: text must be a string

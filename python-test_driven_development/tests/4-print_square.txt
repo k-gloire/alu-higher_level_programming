@@ -1,0 +1,57 @@
+Test cases for the print_square function
+===========================================
+
+Import the function
+--------------------
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Basic squares
+---------------
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(1)
+    #
+
+Size zero prints nothing
+---------------------------
+
+    >>> print_square(0)
+
+Negative integer raises ValueError
+-------------------------------------
+
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Negative float raises TypeError, not ValueError
+---------------------------------------------------
+
+    >>> print_square(-1.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Non-integer types raise TypeError
+-------------------------------------
+
+    >>> print_square(3.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square("4")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square([4])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
