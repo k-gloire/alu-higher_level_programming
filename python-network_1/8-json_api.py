@@ -16,5 +16,4 @@ if __name__ == "__main__":
         if not result:
             print("No result")
         else:
-            user = result[0]
-            print("[{}] {}".format(user.get("id"), user.get("name")))
+            print("[{}] {}".format(result.get("id"), result.get("name")))
