@@ -55,3 +55,10 @@ Non-integer types raise TypeError
     >>> print_square([4])
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+Missing argument
+--------------------
+
+    >>> print_square()  # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
