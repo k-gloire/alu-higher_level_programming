@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists states safely using parameterized SQL queries."""
+"""Lists states safely using a parameterized query."""
 
 import MySQLdb
 import sys
@@ -16,11 +16,11 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    query = (
+    cursor.execute(
         "SELECT * FROM states WHERE name = %s "
-        "ORDER BY id ASC"
+        "ORDER BY states.id ASC",
+        (sys.argv[4],)
     )
-    cursor.execute(query, (sys.argv[4],))
 
     for row in cursor.fetchall():
         print(row)

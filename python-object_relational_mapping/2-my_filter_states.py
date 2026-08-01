@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists states matching the name provided by the user."""
+"""Lists states matching a user-provided name."""
 
 import MySQLdb
 import sys
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     query = (
         "SELECT * FROM states WHERE name = '{}' "
-        "ORDER BY id ASC"
+        "ORDER BY states.id ASC"
     ).format(sys.argv[4])
 
     cursor.execute(query)
