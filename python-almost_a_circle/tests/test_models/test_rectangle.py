@@ -105,6 +105,21 @@ class TestRectangleValidation(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(True, 2)
 
+    def test_x_string(self):
+        """Test that a string x raises TypeError."""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(1, 2, "3")
+
+    def test_y_string(self):
+        """Test that a string y raises TypeError."""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(1, 2, 3, "4")
+
+    def test_height_zero(self):
+        """Test that a zero height raises ValueError."""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(1, 0)
+
 
 class TestRectangleArea(unittest.TestCase):
     """Unittests for Rectangle.area."""
