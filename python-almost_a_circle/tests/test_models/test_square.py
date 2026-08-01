@@ -68,6 +68,11 @@ class TestSquareValidation(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(5, -1)
 
+def test_y_negative(self):
+        """Test that a negative y raises ValueError."""
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Square(1, 2, -3)
+
     def test_x_string(self):
         """Test that a string x raises TypeError."""
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
