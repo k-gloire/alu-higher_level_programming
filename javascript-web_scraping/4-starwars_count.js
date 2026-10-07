@@ -10,10 +10,8 @@ request.get(process.argv[2], (err, response, body) => {
     const films = JSON.parse(body).results;
     let count = 0;
     for (const film of films) {
-      for (const character of film.characters) {
-        if (character.includes(`/people/${characterId}/`)) {
-          count++;
-        }
+      if (film.characters.some(c => c.includes(`/people/${characterId}/`))) {
+        count++;
       }
     }
     console.log(count);
